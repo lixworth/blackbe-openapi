@@ -1,22 +1,21 @@
 # BlackBE 云黑 OpenAPI
 
-> 夢ならばどれほどよかったでしょう 
-
 **API正在快速迭代中，所有内容均不代表最终成果**
 
 ## 概要
 
 V2API与V1相比增加了数种功能，并且大大提高的安全性，有关这方面介绍请查看网站主页。
-我们仅对V1部分API做出兼容处理，所以希望开发者尽快更新，关于更新帮助请查看侧栏中 "升级到V2" 。
 
-版本：2nd Edition Version 1.0 [CodeName: Kamiyama Shiki ]
+V2API相比与V1API改动巨大，我们编写了"从V1升级"协助开发者快速更换到V2，如果读者是第一次接触，无需查看。
+<br/>本文为作者彻夜所敲，非专业人士，用词不当、语句不通、错别字多尽情见谅，本文档开源于Github，也欢迎提pr。
 
-适用于 v2-xxx API
+版本：2nd Edition Version 1.0 [CodeName: Kamiyama Shiki ] <br/>
+适用版本: v2-xxx API <br/>
+维护者: LixWorth <lixworth@outlook.com> <br/>
 
-v2 api 返回统一使用JSON数据格式，并返回固定响应模板，如下例子。例子的JSON对格式进行美化，便于阅读。
+v2 api 返回统一使用JSON数据格式，并返回固定响应模板，如下例子。例子中JSON对格式进行美化，便于阅读。
 
-
-### [GET] /api 获取API服务状态
+### [GET] /api/v2 获取API服务状态
 
 #### 响应
 ```json
@@ -45,8 +44,13 @@ v2 api 返回统一使用JSON数据格式，并返回固定响应模板，如下
 | time | unix timestamp | 当前时间戳 |
 | delay | time | 响应时间 | 
 
-建议开发者使用HTTP请求类，对固定的几种HTTP状态码再中间层进行监听，其余情况均会返回HTTP 200。每个请求操作再对success进行判断，再根据error匹配对应的错误。
-我们官方会尽量制作主流语言的SDK，便于参考。
+请按照文档中我们所写的请求类型进行操作，其中POST需向API传递JSON请求，只要将请求头中的 Content-Type 设置为 application/json，
+此处推荐开发者使用Postman软件测试API，类似于下图:
+
+
+另外建议开发者使用HTTP请求类，对固定的几种HTTP状态码再中间层进行监听，其余情况均会返回HTTP 200。每个请求操作再对success进行判断，再根据error匹配对应的错误。 
+
+如果你对上述内容并不太理解。也不要担心，我们官方会尽量制作主流语言的SDK，便于参考。（列表会写在下面的）
 
 ## 联系我们
-欢迎开发者加入QQ群，一起交流，参与改进API。
+欢迎开发者加入QQ群：887921071与tg群(https://t.me/BlackBEGroup)，一起交流，参与改进API。
